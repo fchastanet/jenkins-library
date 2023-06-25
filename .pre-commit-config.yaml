@@ -1,0 +1,65 @@
+---
+repos:
+    - repo: local
+      hooks:
+          - id: generateDoc
+            name: generateDoc
+            entry: ./generateDoc.sh
+            language: script
+            files: \.groovy$
+            pass_filenames: false
+            stages: [commit]
+
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.4.0
+      hooks:
+          - id: check-ast
+          - id: mixed-line-ending
+            args: [--fix=lf]
+          - id: end-of-file-fixer
+            exclude: ^doc/
+          - id: check-executables-have-shebangs
+          - id: check-shebang-scripts-are-executable
+          - id: check-xml
+          - id: check-yaml
+          - id: forbid-new-submodules
+          - id: check-json
+            exclude: ^.vscode/.*$
+
+    - repo: https://github.com/jumanjihouse/pre-commit-hooks
+      rev: 3.0.0
+      hooks:
+          - id: shfmt
+
+    - repo: https://github.com/DavidAnson/markdownlint-cli2
+      rev: v0.8.1
+      hooks:
+          - id: markdownlint-cli2
+            args: [--fix]
+
+    - repo: https://github.com/koalaman/shellcheck-precommit
+      rev: v0.9.0
+      hooks:
+          - id: shellcheck
+
+    - repo: https://github.com/hadolint/hadolint
+      rev: v2.12.1-beta
+      hooks:
+          - id: hadolint-docker
+            types: [file]
+            files: Dockerfile.*
+
+    - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
+      rev: 0.2.3
+      hooks:
+          - id: yamlfmt
+
+    - repo: https://github.com/nvuillam/npm-groovy-lint
+      rev: v11.1.1
+      hooks:
+          - id: fix-npm-groovy-lint
+            name: Fix Lint groovy findings
+            description: Groovy & Jenkinsfile Auto-fixer
+            entry: npm-groovy-lint --output txt
+            language: node
+            types: [groovy]

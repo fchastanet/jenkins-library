@@ -1,0 +1,33 @@
+{
+    "extends": "recommended",
+    "rules": {
+        "Indentation": {
+            "spacesPerIndentLevel": 2,
+            "severity": "info"
+        },
+        "BlockEndsWithBlankLine": {
+            "enabled": false
+        },
+        "BuilderMethodWithSideEffects": {
+            "enabled": false
+        },
+        "CompileStatic": {
+            "enabled": false
+        },
+        "DuplicateMapLiteral": {
+            "enabled": false
+        },
+        "DuplicateNumberLiteral": {
+            "enabled": false
+        },
+        "FactoryMethodName": {
+            "enabled": false
+        },
+        "ImplicitClosureParameter": {
+            "enabled": false
+        },
+        "ThrowException": {
+            "enabled": false
+        }
+    }
+}

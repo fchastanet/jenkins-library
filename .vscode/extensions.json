@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "ms-azuretools.vscode-docker",
+    "p1c2u.docker-compose",
+    "timonwong.shellcheck",
+    "streetsidesoftware.code-spell-checker",
+    "foxundermoon.shell-format",
+    "esbenp.prettier-vscode",
+    "exiasr.hadolint",
+    "shd101wyy.markdown-preview-enhanced",
+    "yzhang.markdown-all-in-one",
+    "nicolasvuillamy.vscode-groovy-lint",
+    "janjoerke.jenkins-pipeline-linter-connector",
+    "marp-team.marp-vscode"
+  ]
+}
