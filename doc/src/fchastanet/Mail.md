@@ -11,11 +11,11 @@ Send an email following the result of the build emails sent can be SUCCESS, FAIL
 ### `private String getGenericBody(String status)`
 
 Generates a generic body for the email displays the following data:
+  - build user email
+  - status of the build
+  - build parameters
+  - build context: build url, job name, build number
 
-- build user email
-- status of the build
-- build parameters
-- build context: build url, job name, build number
 
-- **Parameters:** `status` — `String` status of the build
-- **Private**
+ * **Parameters:** `status` — `String` status of the build
+ * **Private**

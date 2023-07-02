@@ -220,9 +220,9 @@ class Lint implements Serializable {
    * Jenkinsfile in order to checkout the resources repository and pass the folder in this parameter
    * ```groovy
      libGit.branchCheckout(
-      "${env.WORKSPACE_TMP}/jenkins_library_resources",
+      "${env.WORKSPACE_TMP}/jenkins-library-resources",
       credentialsId,
-      'git@github.com:fchastanet/jenkins_library_resources.git',
+      'git@github.com:fchastanet/jenkins-library-resources.git',
       'main'
      )
    * ```
@@ -241,7 +241,7 @@ class Lint implements Serializable {
    * @example convert stylelint log file to Warnings NG issues format
    * ```groovy
      lint.transformReport(
-        "${env.WORKSPACE_TMP}/jenkins_library_resources",
+        "${env.WORKSPACE_TMP}/jenkins-library-resources",
         "${env.WORKSPACE}/logs/stylelint.json",
         "${env.WORKSPACE}/logs/ng-stylelint.json",
         lib.fchastanet.transformers.Json2Issues.new(this, 'stylelint-v1')
@@ -287,9 +287,9 @@ class Lint implements Serializable {
    * you can checkout this repository using
    * ```groovy
      libGit.branchCheckout(
-       "${env.WORKSPACE_TMP}/jenkins_library_resources",
+       "${env.WORKSPACE_TMP}/jenkins-library-resources",
        credentialsId,
-       'git@github.com:fchastanet/jenkins_library_resources.git',
+       'git@github.com:fchastanet/jenkins-library-resources.git',
        'main'
      )
    * ```

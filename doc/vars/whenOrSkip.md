@@ -2,7 +2,7 @@
 
 ## `void call(boolean condition, Closure body=null)`
 
-execute body or skip the stage if condition fails
+execute body or skip the stage if condition fails 
 
 ```Jenkinsfile
  stage('Zero') {
@@ -11,3 +11,4 @@ execute body or skip the stage if condition fails
    }
  }
 ```
+

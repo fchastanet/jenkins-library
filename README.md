@@ -1,4 +1,4 @@
-# jenkins_library
+# jenkins-library
 
 Offers tools to be used inside jenkins pipelines
 
@@ -21,10 +21,10 @@ Offers tools to be used inside jenkins pipelines
 
 ```groovy
 def lib = library(
-    identifier: 'jenkins_library@v1.0.0',
+    identifier: 'jenkins-library@v1.0.0',
     retriever: modernSCM([
         $class: 'GitSCMSource',
-        remote: 'git@github.com:fchastanet/jenkins_library.git',
+        remote: 'git@github.com:fchastanet/jenkins-library.git',
         credentialsId: 'babee6c1-14fe-4d90-9da0-ffa7068c69af'
     ])
 )

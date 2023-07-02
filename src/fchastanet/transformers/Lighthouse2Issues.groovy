@@ -34,7 +34,7 @@ class Lighthouse2Issues implements Serializable, ITransformer {
    * @param args `Map`
    * @param args.lighthouseThresholdConfigPath `String` thresholds configuration path
    *
-   * @see [Threshold configuration defaults with documentation integrated](https://github.com/fchastanet/jenkins_library_resources/blob/master/warnings-ng/lintLogsSamples/conf/lighthouse-v0.8-thresholds-default.js)
+   * @see [Threshold configuration defaults with documentation integrated](https://github.com/fchastanet/jenkins-library-resources/blob/master/warnings-ng/lintLogsSamples/conf/lighthouse-v0.8-thresholds-default.js)
    */
   boolean transform(String srcReportFile, String targetReportFile, Map args = [:]) {
     return this.jenkinsExecutor.sh("""#!/bin/bash
