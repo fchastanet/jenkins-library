@@ -4,7 +4,17 @@ repos:
       hooks:
           - id: generateDoc
             name: generateDoc
-            entry: ./generateDoc.sh
+            entry: ./generateDoc.sh node doc2md.js /tmp/src groovy /tmp/doc/src
+            language: script
+            files: \.groovy$
+            pass_filenames: false
+            stages: [commit]
+
+    - repo: local
+      hooks:
+          - id: generateDoc
+            name: generateDoc
+            entry: ./generateDoc.sh node doc2md.js /tmp/vars groovy /tmp/doc/vars
             language: script
             files: \.groovy$
             pass_filenames: false
@@ -42,6 +52,7 @@ repos:
       rev: v0.9.0
       hooks:
           - id: shellcheck
+            exclude: ^gradlew
 
     - repo: https://github.com/hadolint/hadolint
       rev: v2.12.1-beta

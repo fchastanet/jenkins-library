@@ -17,6 +17,11 @@
   "markdown.extension.toc.omittedFromToc": {
     "*.md": ["# %%"]
   },
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "editor.renderFinalNewline": "on",
   "markdown.extension.toc.levels": "2..6",
   "shellcheck.customArgs": ["--source-path=SCRIPTDIR", "--external-sources"],
   "jenkins.pipeline.linter.connector.user": "admin",
@@ -28,6 +33,7 @@
     "checkstyle",
     "Dockerfiles",
     "fchastanet",
+    "gradlew",
     "Jenkinsfiles",
     "stylelintrc"
   ],

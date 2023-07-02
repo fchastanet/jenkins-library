@@ -1,0 +1,60 @@
+plugins {
+  id 'groovy'
+}
+
+group = 'com.fchastanet.jenkins-library'
+version = '1.0.0'
+
+repositories {
+  mavenCentral()
+  maven { url 'https://repo.jenkins-ci.org/releases' }
+  maven { url 'https://repo.jenkins-ci.org/public/' }
+}
+
+dependencies {
+  //implementation 'org.jenkinsci.plugins:pipeline-model-definition:2.2118.v31fd5b_9944b_5'
+  //implementation 'org.jenkinsci.plugins:pipeline-model-definition:2.2133.ve46a_6113dfc3'
+  implementation 'org.jenkins-ci.main:jenkins-core:2.85'
+  implementation 'org.codehaus.groovy:groovy-all:3.0.17'
+
+  // implementation 'org.junit.jupiter:junit-jupiter-api:5.4.0'
+
+  // add jenkins plugins
+  //implementation group: 'org.jenkins-ci.main', name: 'jenkins-core', version: '2.2118.v31fd5b_9944b_5'
+  implementation 'org.jenkins-ci.plugins:pipeline-utility-steps:1.5.1@jar'
+  implementation 'io.jenkins.plugins:warnings-ng:10.2.0@jar'
+  implementation 'org.jenkinsci.plugins:pipeline-model-definition:2.2133.ve46a_6113dfc3@jar'
+
+  // testImplementation('org.junit.jupiter:junit-jupiter')
+  testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.4.0'
+  testImplementation 'org.junit.vintage:junit-vintage-engine:5.4.0'
+  testImplementation 'com.lesfurets:jenkins-pipeline-unit:1.17'
+}
+
+sourceSets {
+  main {
+    groovy {
+      srcDirs = ['src', 'vars']
+    }
+    resources {
+      srcDirs = ['resources']
+    }
+  }
+  test {
+    compileClasspath += sourceSets.main.output
+    runtimeClasspath += sourceSets.main.output
+
+    groovy {
+      srcDirs = ['test']
+    }
+  }
+}
+
+tasks.withType(Test) {
+  useJUnitPlatform()
+  testLogging {
+    exceptionFormat 'full'
+    events 'started', 'skipped', 'passed', 'failed'
+    showStandardStreams true
+  }
+}
